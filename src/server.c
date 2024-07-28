@@ -1,12 +1,4 @@
 #include "server.h"
-//Create a socket and bind it to an IP address and the chosen port.
-//Put the socket in listening mode to accept incoming connections.
-
-//       struct sockaddr_in {
-//           sa_family_t     sin_family;     /* AF_INET */
-//           in_port_t       sin_port;       /* Port number */
-//           struct in_addr  sin_addr;       /* IPv4 address */
-//       };
 
 int init_server(http_server_t* server, int port){
 	server->socket_fd = socket(AF_INET, SOCK_STREAM, 0);
