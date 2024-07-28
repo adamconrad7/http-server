@@ -23,7 +23,7 @@ void run_server(http_server_t* server){
 	printf("Server listening on port %d\n", ntohs(server->address.sin_port));
 	int cfd = accept(server -> socket_fd, (struct sockaddr*)&server -> address, &server -> addrlen);
 
-	void* buf[1000];
+	char buf[1000];
 	ssize_t bytes =  recv(cfd, buf, 1000, 0);
 	printf("Server: recieved %zd bytes from client\n", bytes);
 	char* ack = "HTTP/1.1 200 OK Content-Type: text/html";
